@@ -38,7 +38,7 @@ Route::get('/', function () {
 // });
 
 // Route::get('/hitung/{angka1}/{angka2}', function($angka1, $angka2){
-//     return 'bilangan 1 : '. $angka1. "<br>". 'bilangan 2 : '. $angka2. "<br>". "hasilnya : ". $angka1 + $angka2; 
+//     return 'bilangan 1 : '. $angka1. "<br>". 'bilangan 2 : '. $angka2. "<br>". "hasilnya : ". $angka1 + $angka2;
 // });
 
 
@@ -109,3 +109,11 @@ Route::get('/', function () {
 //     'Total pembayaran :'. $total - $cashback - $potongan.
 //     "</center>";
 // });
+
+
+Route::get('/siswa', function () {
+
+    $data_siswa = ['Keyndra', 'napis', 'nabila', 'daffa', 'opet', 'agus'];
+
+    return view('tampil' ,compact('data_siswa'));
+});
