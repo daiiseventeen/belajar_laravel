@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ppdbController;
+use App\Http\Controllers\ppdbsController;
+use App\Http\Controllers\SiswasController;
+use App\Http\Controllers\SiswasControllerController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -110,10 +116,40 @@ Route::get('/', function () {
 //     "</center>";
 // });
 
+// Route::get('/Barang', function () {
 
-Route::get('/siswa', function () {
+//     $Barang = Barang::where('nama_barang','LIKE','%SUSU%')->get();
+//     // $Barang = Barang::where('id',1)->get();
+//     return view('tampil_barang' ,compact('Barang'));
+// });
 
-    $data_siswa = ['Keyndra', 'napis', 'nabila', 'daffa', 'opet', 'agus'];
 
-    return view('tampil' ,compact('data_siswa'));
-});
+// Route::get('/Barang', function () {
+
+//     $Barang = Barang::all();
+//     return view('tampil_barang' ,compact('Barang'));
+// });
+
+// Route::get('/siswa', function () {
+
+//     $data_siswa = ['Keyndra', 'napis', 'nabila', 'daffa', 'opet', 'agus'];
+
+//     return view('tampil' ,compact('data_siswa'));
+// });
+
+
+// Route::get('/Post', function () {
+//     $Post = Post::all();
+//     return view('tampil_post' ,compact('Post'));
+// });
+
+// Route::get('/Barang', [PostsController::class, 'menampilkan']);
+// Route::get('/Post', [PostsController::class, 'menampilkan2']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('siswa', SiswasController::class);
+
+Route::resource('ppdb', ppdbsController::class);

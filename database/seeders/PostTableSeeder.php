@@ -19,6 +19,8 @@ class PostTableSeeder extends Seeder
         ['title' => 'Tips cepat kaya', 'content' => 'lorem ipsum'],
         ['title' => 'Tips cepat mati', 'content' => 'lorem ipsum'],
         ['title' => 'Tips cepat di kejar anjing', 'content' => 'lorem ipsum'],
+        ['title' => 'Tips cepat pacaran', 'content' => 'lorem ipsum'],
+        ['title' => 'Tips cepat pinter', 'content' => 'lorem ipsum'],
       ];
 
       // masukkan data ke database
